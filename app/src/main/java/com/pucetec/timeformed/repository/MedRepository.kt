@@ -2,9 +2,11 @@ package com.pucetec.timeformed.repository
 
 import com.pucetec.timeformed.model.Med
 import com.pucetec.timeformed.model.dto.MedRequest
-import com.pucetec.timeformed.network.ApiService
+import com.pucetec.timeformed.network.RetrofitClient
 
-class MedRepository(private val apiService: ApiService) {
+class MedRepository {
+
+    private val apiService = RetrofitClient.apiService
 
     // Obtener todos los medicamentos
     suspend fun getMeds(): List<Med> {
